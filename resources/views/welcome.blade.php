@@ -57,6 +57,10 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            .copyrights {
+              text-align: center;
+              margin-top: -45px;
+            }
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -68,7 +72,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -81,14 +85,18 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Taurese & Sohil's Videobox
+                    The VideoBox
                 </div>
 
                 <div class="links">
-          <h3><i>De enige echte videobox!</i></h3>
+          <h4>The official videobox by Taurese Usman & Sohil Alami</h4>
                     <a href="https://github.com/25487/K_SEC-Examen">GitHub</a>
                 </div>
             </div>
+
         </div>
+        <div class="copyrights">
+        <h5>©2021 All rights reserved by | Taurese Usman & Sohil Alami </h5>
+      </div>
     </body>
 </html>
