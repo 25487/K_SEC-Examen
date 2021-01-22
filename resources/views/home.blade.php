@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    Log In of Maak een Account aan voor alle content!
+                    U bent ingelogd as $_user!
                 </div>
             </div>
         </div>

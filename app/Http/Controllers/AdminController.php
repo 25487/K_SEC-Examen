@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class AdminController extends Controller
 {
-    public function list()
+    public function index()
     {
-      return "Admin!";
+        return view('admin.index');
     }
+    public function overzicht()
+    {
+        return view('admin.overzicht');
+
+
+    }
+
 }
