@@ -21,8 +21,9 @@
                         </div>
                     @endif
 
-                    U bent ingelogd as $_user!
+                    U bent ingelogd as {{ Auth::user()->name }}
                 </div>
+
             </div>
         </div>
     </div>
