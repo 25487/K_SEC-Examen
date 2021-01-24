@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
-
+use App\Http\Controllers\Admin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 Route::post('/auth','AdminController@index');
@@ -29,4 +30,6 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 //Route::get('/user', 'UserController@index')->name('user');
 //Route::get("users", 'UserController@index');
 
+
 Route::get("users", [Users::class,'index']);
+Route::get("admin", [Admin::class,'index']);
