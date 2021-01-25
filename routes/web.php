@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\LaravelCrud;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,10 +27,9 @@ Route::post('/auth','AdminController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::get('/user', 'UserController@index')->name('user');
 Route::get('/admin', 'AdminController@index')->name('admin');
-//Route::get('/users', [UserController::class, 'index']);
-//Route::get('/user', 'UserController@index')->name('user');
-//Route::get("users", 'UserController@index');
 
+Route::get('crud', [LaravelCrud::class, 'index']);
+Route::post('add', [LaravelCrud::class, 'add']);
 
 Route::get("users", [Users::class,'index']);
 Route::get("admin", [Admin::class,'index']);
