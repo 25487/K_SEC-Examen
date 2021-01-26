@@ -23,8 +23,8 @@
 
                     U bent ingelogd as Admin
 
-                    <h6 style="margin-top: 30px;">Link naar de <a href="{{ url('/crud') }}">CRUD</a></h6>
-
+                    <h6 style="padding-bottom: 15px;">Via het Admin Panel kunt u verschillende dingen aanpassen:</h6>
+                  <a href="{{ url('/crud') }}" style="margin-top: 100px;"><button class="btn btn-primary">CRUD</button></a>
                 </div>
 
             </div>
