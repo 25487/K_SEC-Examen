@@ -22,6 +22,8 @@
                     @endif
 
                     U bent ingelogd as {{ Auth::user()->name }}
+
+                  Link naar de<a href="{{ url('/crud.index') }}">CRUD</a>
                 </div>
 
             </div>

@@ -21,7 +21,9 @@
                         </div>
                     @endif
 
-                    U bent ingelogd as Admin 
+                    U bent ingelogd as Admin
+
+                    <h6 style="margin-top: 30px;">Link naar de <a href="{{ url('/crud') }}">CRUD</a></h6>
 
                 </div>
 

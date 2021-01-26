@@ -22,8 +22,11 @@
                     @endif
 
                     U bent ingelogd as {{ Auth::user()->name }}
-                    
+
+                  
+                    <h6 style="margin-top: 30px;">Link naar de <a href="{{ url('/crud') }}">CRUD</a></h6>
                 </div>
+
 
             </div>
         </div>

@@ -14,7 +14,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3" style="margin-top: 50px;">
-      <h4>Laravel CRUD</h4>
+      <h4>{{$Title}} | Laravel CRUD</h4>
       <hr>
 
       @if(Session::get('success'))
@@ -29,55 +29,35 @@
       </div>
       @endif
 
-      <form action="add" method="post">
+      <form action="{{route('update')}}" method="post">
 
         @csrf
+        <input type="hidden" name="cid" value="{{ $Info->id }}">
         <div class="form-group">
           <label for="">Name</label>
-          <input type="text" class="form-control" name="name" placeholder="Enter name" value="{{ old('name') }}">
+          <input type="text" class="form-control" name="name" placeholder="Enter name" value="{{ $Info->name }}">
           <span style="color:red">@error('name'){{ $message }} @enderror</span>
         </div>
 
         <div class="form-group">
           <label for="">Video Title</label>
-          <input type="text" class="form-control" name="videotitle" placeholder="Video Title" value="{{ old('videotitle') }}">
+          <input type="text" class="form-control" name="videotitle" placeholder="Video Title" value="{{ $Info->videotitle }}">
           <span style="color:red">@error('videotitle'){{ $message }} @enderror</span>
         </div>
 
         <div class="form-group">
           <label for="">Description</label>
-          <input type="text" class="form-control" name="description" placeholder="Description" value="{{ old('description') }}">
+          <input type="text" class="form-control" name="description" placeholder="Description" value="{{ $Info->description }}">
           <span style="color:red">@error('description'){{ $message }} @enderror</span>
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block">Opslaan</button>
+          <button type="submit" class="btn btn-primary btn-block">Updaten</button>
         </div>
       </form>
-      <br>
 
-      <table class="table table-hover">
-        <thead>
-          <th>Name</th>
-          <th>Video Title</th>
-          <th>Description</th>
-          <th>Actions</th>
-        </thead>
-        <tbody>
-          @foreach ($list as $item)
-        <tr>
-          <td>{{ $item->name }}</td>
-          <td>{{ $item->videotitle }}</td>
-          <td>{{ $item->description }}</td>
-          <td>
-          <div class="btn-group">
-            <a href="delete/{{ $item->id }}" class="btn btn-danger btn-xs">Delete</a>
-            <a href="edit/{{ $item->id }}" class="btn btn-primary btn-xs">Edit</a>
-          </td>
-        </tr>
-        @endforeach
-        </tbody>
-      </table>
+
+
 
 
   </body>

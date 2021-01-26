@@ -30,6 +30,10 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('crud', [LaravelCrud::class, 'index']);
 Route::post('add', [LaravelCrud::class, 'add']);
+Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
+Route::post('update', [LaravelCrud::class, 'update'])->name('update');
+Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
+
 
 Route::get("users", [Users::class,'index']);
 Route::get("admin", [Admin::class,'index']);
