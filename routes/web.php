@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\LaravelCrud;
+use App\Http\Controllers\UploadController;
+use Spatie\Activitylog\Models\Activity;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,11 @@ use App\Http\Controllers\LaravelCrud;
 */
 
 Route::get('/', function () {
+
+
     return view('welcome');
+    return Activity::all();
+
 });
 
 Auth::routes(['verify' => true]);
@@ -33,6 +39,8 @@ Route::post('add', [LaravelCrud::class, 'add']);
 Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
 Route::post('update', [LaravelCrud::class, 'update'])->name('update');
 Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
+
+Route::get('upload', [UploadController::class, 'index']);
 
 
 Route::get("users", [Users::class,'index']);
