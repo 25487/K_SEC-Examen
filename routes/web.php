@@ -6,6 +6,9 @@ use App\Http\Controllers\Admin;
 use App\Http\Controllers\LaravelCrud;
 use App\Http\Controllers\UploadController;
 use Spatie\Activitylog\Models\Activity;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\BekijkenController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +44,8 @@ Route::post('update', [LaravelCrud::class, 'update'])->name('update');
 Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 
 Route::get('upload', [UploadController::class, 'index']);
+Route::get('welcome', [WelcomeController::class, 'welcome']);
+Route::get('bekijken', [BekijkenController::class, 'index']);
 
 
 Route::get("users", [Users::class,'index']);

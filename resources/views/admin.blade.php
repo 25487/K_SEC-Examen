@@ -25,6 +25,14 @@
 
                     <h6 style="padding-bottom: 15px;">Via het Admin Panel kunt u verschillende dingen aanpassen:</h6>
                   <a href="{{ url('/crud') }}" style="margin-top: 100px;"><button class="btn btn-primary">CRUD</button></a>
+                  <a href="http://localhost:8888/phpMyAdmin/db_structure.php?server=1&db=videobox" style="margin-top: 100px; padding-left: 15px;"><button class="btn btn-primary">Database</button></a>
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="margin-top: 100px; padding-left: 15px;">
+  <button class="btn btn-primary">Log Out</button>
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>
                 </div>
 
             </div>

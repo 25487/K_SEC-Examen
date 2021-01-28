@@ -19,6 +19,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3" style="margin-top: 50px;">
           <h4>Verslag doen | Gebruiker</h4>
+          <a href="/home"><p>Klik hier om terug te gaan naar het dashboard!</p></a>
           <hr>
 
           @if(Session::get('success'))
