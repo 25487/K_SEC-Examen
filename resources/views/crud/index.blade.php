@@ -51,8 +51,15 @@
         </div>
 
         <div class="form-group">
+          <label for="" >Bestand</label>
+          <input type="file" class="form-control" name="file" value="{{ old('file') }}" style="padding-bottom: 5px;">
+          <span style="color:red">@error('file'){{ $message }} @enderror</span>
+        </div>
+
+        <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block">Opslaan</button>
         </div>
+        
       </form>
       <br>
 
@@ -61,6 +68,7 @@
           <th>Name</th>
           <th>Video Title</th>
           <th>Description</th>
+          <th>File</th>
           <th>Actions</th>
         </thead>
         <tbody>
@@ -69,6 +77,8 @@
           <td>{{ $item->name }}</td>
           <td>{{ $item->videotitle }}</td>
           <td>{{ $item->description }}</td>
+          <td>{{ $item->file }}</td>
+
           <td>
           <div class="btn-group">
             <a href="delete/{{ $item->id }}" class="btn btn-danger btn-xs">Delete</a>

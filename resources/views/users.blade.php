@@ -26,7 +26,7 @@
 
                     <h6 style="padding-top: 5px;">Momenteel bevind u zich in het gebruikers dashboard:</h6>
                     <h6 style="padding-bottom: 15px;">Hier kunt u verslagen & rapportages doen & video's uploaden door op de desbetrefende button te klikken.</h6>
-                  <a href="{{ url('/crud') }}" style="margin-top: 100px;"><button class="btn btn-primary">CRUD</button></a>
+                  
                   <a href="{{ url('/upload') }}" style="margin-top: 100px; padding-left: 15px;"><button class="btn btn-primary">Upload</button></a>
 
 

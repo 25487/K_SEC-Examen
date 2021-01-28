@@ -52,6 +52,12 @@
         </div>
 
         <div class="form-group">
+          <label for="">File</label>
+          <input type="file" class="form-control" name="file"  value="{{ $Info->file }}">
+          <span style="color:red">@error('file'){{ $message }} @enderror</span>
+        </div>
+
+        <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block">Updaten</button>
         </div>
       </form>

@@ -22,12 +22,14 @@ class UploadController extends Controller
     $request->validate([
       'name' =>'required',
       'videotitle' => 'required',
-      'description' => 'required'
+      'description' => 'required',
+      'file' => 'required'
     ]);
     $query = DB::table('crud')->insert([
     'name'=>$request->input('name'),
     'videotitle'=>$request->input('videotitle'),
-    'description'=>$request->input('description')
+    'description'=>$request->input('description'),
+    'file'=>$request->input('file')
     ]);
     if($query){
 
@@ -53,7 +55,9 @@ class UploadController extends Controller
     $request->validate([
       'name'=>'required',
       'videotitle'=>'required',
-      'description'=>'required'
+      'description'=>'required',
+      'file' => 'required'
+
 
     ]);
     $updating = DB::table('crud')
@@ -61,7 +65,8 @@ class UploadController extends Controller
                 ->update([
                   'name'=>$request->input('name'),
                   'videotitle'=>$request->input('videotitle'),
-                  'description'=>$request->input('description')
+                  'description'=>$request->input('description'),
+                  'file'=>$request->input('file')
                 ]);
                 return redirect('crud');
   }
